@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ .Title }}{{ if ne .Title .Site.Title }} // {{ .Site.Title }}{{ end }}</title>
+	<meta name="google-site-verification" content="2oJwJGI2l3WDlTZkA9w9lyBnkbF9drJ47SUO96y96sk" />
+	<script type='text/javascript' src='//pl14963939.highrevenuecpm.com/b9/bb/d1/b9bbd1fe19912aa83b06984320a41121.js'></script>
+
+    {{ partial "meta.html" . }}
+    {{ partial "og.html" . }}
+
+    {{- with .OutputFormats.Get "rss" -}}
+    <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{- end }}
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="{{ "webfonts/ptserif/main.css" | absURL }}" rel='stylesheet' type='text/css'>
+    <link href="{{ "webfonts/source-code-pro/main.css" | absURL }}" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+    {{ range .Site.Params.customCss -}}
+        <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
+
+    {{ hugo.Generator }}
+</head>

@@ -1,0 +1,4 @@
+baseURL = "https://freemusica-ninevas7.vercel.app"
+languageCode = "en-us"
+title = "Free Sheet Music Classic USA"
+theme = "hugo-theme-minos"
